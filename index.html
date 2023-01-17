@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Conversor de monedas Nacional</title>
+</head>
+<body>
+    <main>
+        <h1>Conversor de monedas Nacional</h1>
+        <hr>
+        <section>
+            <div id="container_pesos">
+                <h2>Pesos CLP</h2>
+                <input id="cantidad" type="number" placeholder="Ingrese el monto en CLP" onkeyup="stateChange()">
+            </div>
+            <div id="container_convertir">
+                <h2>Moneda a convertir:</h2>
+                <select name="moneda" id="moneda" onchange="stateChange(), renderChart()">
+                    <option value="dolar">Dólar</option>
+                    <option value="euro">Euro</option>
+                    <option value="uf">UF</option>
+                    <option value="utm">UTM</option>
+                </select>
+            </div>
+        </section>
+        <button id="convertir" enable>Convertir</button>
+        <span id="error"></span>
+        <div id="resultado">
+            <span id="peso_chileno">$0 = </span>
+            <span id="moneda_elegida">...</span>
+        </div>
+        <hr>
+        <span id="currencyHistory"></span>
+        <div id="container_chart">
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
